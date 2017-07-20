@@ -1,7 +1,7 @@
 
 Microsoft Visual Studio Solution File, Format Version 15.00
 # Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netcore-csv-parser", "netcore-csv-parser.csproj", "{0B3749E6-77FF-42A7-8E87-3212D7E518AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netcore-csv-parser", "src/netcore-csv-parser/netcore-csv-parser.csproj", "{0B3749E6-77FF-42A7-8E87-3212D7E518AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

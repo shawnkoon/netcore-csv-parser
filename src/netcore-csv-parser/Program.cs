@@ -1,4 +1,4 @@
-﻿namespace netcore_csv_parser
+﻿namespace netcoreCsvParser
 {
     using System;
     using System.Collections.Generic;
