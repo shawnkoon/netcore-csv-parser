@@ -3,6 +3,9 @@ Project focused on Creating Dotnet Core project from scratch to fully working + 
 
 
 # To Run
+
 `$ dotnet restore`
+
 `$ dotnet build`
+
 `$ dotnet run mockCSV.csv`
