@@ -3,8 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.IO;
-    
-    class Program
+    using System.Linq;
+
+  class Program
     {
         public static void Main(string[] args)
         {
@@ -13,33 +14,29 @@
 
             try 
             {
-                if (args.Length == 1) 
-                {
-                    using (Stream fileStream = new FileStream(args[0], FileMode.Open, FileAccess.Read))
-                    {
-                        using (StreamReader fileReader = new StreamReader(fileStream))
-                        {
-                            string line;
-                            while ((line = fileReader.ReadLine()) != null)
-                            {
-                                if (columnRow.Count == 0)
-                                {
-                                    columnRow = getRow(line);
-                                    continue;
-                                }
-                                if (line.Trim() != "")
-                                {
-                                    dataRows.Add(getRow(line));
-                                }
-                            }
-                        }
-                    }
-                    Console.WriteLine(generateJson(columnRow, dataRows));
-                }
-                else 
+                if (args.Length != 1)
                 {
                     throw new ArgumentException("Exactly one argument required.");
                 }
+
+                using (Stream fileStream = new FileStream(args[0], FileMode.Open, FileAccess.Read))
+                using (StreamReader fileReader = new StreamReader(fileStream))
+                {
+                    string line;
+                    while ((line = fileReader.ReadLine()) != null)
+                    {
+                        if (columnRow.Count == 0)
+                        {
+                            columnRow = getRow(line);
+                            continue;
+                        }
+                        if (line.Trim() != "")
+                        {
+                            dataRows.Add(getRow(line));
+                        }
+                    }
+                }
+                Console.WriteLine(generateJson(columnRow, dataRows));
             } 
             catch (Exception caught)
             {
@@ -78,13 +75,9 @@
 
         private static List<string> getRow(string line)
         {
-            string[] lineArray = line.Split(',');
-            List<string> result = new List<string>();
-            for (int index = 0; index < lineArray.Length; index++)
-            {
-                result.Add(lineArray[index].Trim());
-            }
-            return result;
+            return line?.Split(',')
+                    .Select(data => data.Trim())
+                    .ToList();
         }
     }
 }

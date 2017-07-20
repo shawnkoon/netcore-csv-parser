@@ -4,6 +4,8 @@ Project focused on Creating Dotnet Core project from scratch to fully working + 
 
 # To Run
 
+`$ cd src/netcoreCSVParser`
+
 `$ dotnet restore`
 
 `$ dotnet build`
