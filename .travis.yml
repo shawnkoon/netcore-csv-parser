@@ -1,0 +1,11 @@
+language: csharp
+solution: ./netcoreCSVParser.sln
+
+install:
+  - dotnet restore ./src/netcoreCSVParser
+
+script:
+  - dotnet build ./src/netcoreCSVParser
+
+after_script:
+  - dotnet clean ./src/netcoreCSVParser
