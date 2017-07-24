@@ -4,7 +4,8 @@ notifications:
     on_failure: always
 
 language: csharp
-dotnet: 1.0.0-preview2-1-003177
+mono: none
+dotnet: dotnet-dev-1.0.4
 branches:
   only:
     - master
