@@ -1,4 +1,14 @@
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
 language: csharp
+dotnet: 1.0.0-preview2-1-003177
+branches:
+  only:
+    - master
+
 solution: ./netcoreCSVParser.sln
 
 install:
